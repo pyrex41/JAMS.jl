@@ -5,7 +5,7 @@ Currently built just by defining the Grammar and using `Lerche.jl` to build a pa
 ```julia
 julia> using JAMS
 
-julia> f = open("test/pass/nested_example.jams") |> read |> String
+julia> f = read("test/pass/nested_example.jams") |> String
 "{\n    basic_key basic_value\n    list_key [item1 item2]\n    nested [\n        {\n            key1 val1 \n            key2 val2\n        }\n        {\n            key3 [val3 val4]\n        }\n    ]\n    str_key \"superfluous nesting\"\n}\n"
 
 julia> JAMS.parse(f)
