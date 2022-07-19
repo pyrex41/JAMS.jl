@@ -3,6 +3,14 @@ uuid = "e037fcc2-89bb-496d-a467-a0483cd5c74c"
 authors = ["pyrex41 <reub.brooks@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Lerche = "d42ef402-04e6-4356-9f73-091573ea58dc"
+PrettyPrinting = "54e16d92-306c-5ea0-a30b-337be88ac337"
+RBNF = "83ef0002-5b9e-11e9-219b-65bac3c6d69c"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
 [compat]
 julia = "1"
 
