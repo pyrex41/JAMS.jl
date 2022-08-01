@@ -1,5 +1,4 @@
 module Parser  # JAMS
-using Mmap
 using ..Common
 import Parsers
 import Base.isdigit
