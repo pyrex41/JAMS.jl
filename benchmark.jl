@@ -22,7 +22,8 @@ function jsonrun(p)
     @btime JSON.parse($s)
 end
 
-function bench(i)
+function bench(ii)
+    i = max(min(length(pass_names), ii), 1)
     p = pass_names[i]
     println("Test: ", p)
     print("JAMS:   ")
@@ -31,12 +32,12 @@ function bench(i)
     print("JSON:   ")
     jsonrun(p)
     println("-----------------------------")
-    println()
-    sleep(1)
 end
 
 function benchall()
     for i=1:length(pass_names)
         bench(i)
+        println()
+        sleep(1)
     end
 end
