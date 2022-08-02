@@ -2,6 +2,8 @@
 
 Built by refactoring [JSON.jl](https://github.com/JuliaIO/JSON.jl).
 
+Currently only implementing parsing; encoding is a separate straightforward extension.
+
 Exports `parse` and `parsefile`
 
 
