@@ -66,3 +66,92 @@ Test Summary: | Pass  Total
 Fail Tests    |    9      9
      Testing JAMS tests passed
 ```
+
+To run benchmarks:
+```julia
+╰─ julia --project
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.2 (2022-02-06)
+ _/ |\__'_|_|_|\__'_|  |  HEAD/bf53498635 (fork: 461 commits, 418 days)
+|__/                   |
+
+julia> include("benchmark/benchmark.jl")
+benchall (generic function with 1 method)
+
+julia> benchall()
+Test: bare1
+JAMS:     1.046 μs (21 allocations: 1.19 KiB)
+-----
+JSON:     334.649 ns (9 allocations: 672 bytes)
+-----------------------------
+
+Test: bare2
+JAMS:     847.217 ns (21 allocations: 1.19 KiB)
+-----
+JSON:     318.551 ns (9 allocations: 672 bytes)
+-----------------------------
+
+Test: bareAll
+JAMS:     1.071 μs (21 allocations: 1.19 KiB)
+-----
+JSON:     337.118 ns (9 allocations: 688 bytes)
+-----------------------------
+
+Test: double-quote
+JAMS:     210.135 ns (5 allocations: 288 bytes)
+-----
+JSON:     237.430 ns (7 allocations: 320 bytes)
+-----------------------------
+
+Test: emptyquotes
+JAMS:     673.116 ns (17 allocations: 1.11 KiB)
+-----
+JSON:     312.586 ns (8 allocations: 640 bytes)
+-----------------------------
+
+Test: example
+JAMS:     5.604 μs (103 allocations: 5.02 KiB)
+-----
+JSON:     1.038 μs (35 allocations: 1.92 KiB)
+-----------------------------
+
+Test: nested_example
+JAMS:     7.292 μs (135 allocations: 6.75 KiB)
+-----
+JSON:     1.417 μs (49 allocations: 2.86 KiB)
+-----------------------------
+
+Test: one-empty-quote
+JAMS:     195.819 ns (5 allocations: 288 bytes)
+-----
+JSON:     176.717 ns (2 allocations: 64 bytes)
+-----------------------------
+
+Test: quotes-never-fail
+JAMS:     5.327 μs (114 allocations: 5.92 KiB)
+-----
+JSON:     1.783 μs (77 allocations: 3.69 KiB)
+-----------------------------
+
+Test: str
+JAMS:     306.510 ns (9 allocations: 368 bytes)
+-----
+JSON:     182.055 ns (3 allocations: 96 bytes)
+-----------------------------
+
+Test: trailing-whitespaces
+JAMS:     218.296 ns (5 allocations: 288 bytes)
+-----
+JSON:     189.950 ns (3 allocations: 96 bytes)
+-----------------------------
+
+Test: wethpack
+JAMS:     17.333 μs (208 allocations: 11.31 KiB)
+-----
+JSON:     2.153 μs (73 allocations: 5.03 KiB)
+-----------------------------
+```
