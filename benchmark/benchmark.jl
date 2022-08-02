@@ -10,16 +10,12 @@ pass_names = begin
 end
 
 function jamrun(p)
-    s = open("test/pass/"*p*".jams") do f
-        f |> read |> String
-    end
+    s = read("test/pass/"*p*".jams") |> String
     @btime JAMS.parse($s)
 end
 
 function jsonrun(p)
-    s = open("test/pass/"*p*".json") do f
-        f |> read |> String
-    end
+    s = read("test/pass/"*p*".json") |> String
     @btime JSON.parse($s)
 end
 
