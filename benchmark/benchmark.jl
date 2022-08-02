@@ -1,4 +1,5 @@
-using JAMS, JSON, BenchmarkTools
+include("../src/JAMS.jl")
+using .JAMS, JSON, BenchmarkTools
 
 
 pass_names = begin
