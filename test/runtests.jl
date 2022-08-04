@@ -1,5 +1,5 @@
 #include("../src/JAMS.jl")
-using JAMS, JSON
+using JAMS, JSON, Mmap
 using Test
 
 pass_names = begin
